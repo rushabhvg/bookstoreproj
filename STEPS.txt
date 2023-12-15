@@ -42,3 +42,17 @@
 16. Write code for CRUD
 
 17. Refactor using ExpressRouter
+
+18. Add CORS policy
+
+19. Create a frontend using:
+    npm create vite@latest
+
+20. Navigate to /frontend and type:
+    npm i
+
+21. Install tailwind css:
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+22. 
