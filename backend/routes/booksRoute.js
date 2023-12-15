@@ -62,7 +62,10 @@ router.get("/:id", async (request, response) => {
 // Route to update book by ID from the database
 router.put("/:id", async (request, response) => {
   try {
-    if (!request.body.title || !request.body.author || !request.body.publishYear
+    if (
+      !request.body.title ||
+      !request.body.author ||
+      !request.body.publishYear
     ) {
       return response.status(400).send({
         message: "Required field(s) missing!",
@@ -95,10 +98,14 @@ router.delete("/:id", async (request, response) => {
     const result = await Book.findByIdAndDelete(id);
 
     if (!result) {
-      return response.status(404).json({ message: `Book with id ${id} is not found!` });
+      return response
+        .status(404)
+        .json({ message: `Book with id ${id} is not found!` });
     }
 
-    return response.status(200).send({ message: `Book with id ${id} is deleted!` });
+    return response
+      .status(200)
+      .send({ message: `Book with id ${id} is deleted!` });
   } catch (error) {
     console.log(error);
     response.status(500).send({ message: error.message });
