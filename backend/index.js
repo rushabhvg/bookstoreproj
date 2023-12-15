@@ -3,8 +3,11 @@ import { PORT } from "./config.js";
 
 const app = express();
 
-app.listen(PORT, () => {
+app.get('/', (request, response) => {
+    console.log(request);
+    return response.status(234).send('Welcome to the BookStoreProj!');
+});
 
-    console.log(`Server listening on port ${PORT}`);
-    
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
