@@ -40,6 +40,36 @@ app.post('/books', async (request, response) => {
     }
 });
 
+// Route to get all books from the database
+app.get('/books', async (request, response) => {
+    try {
+        const books = await Book.find({});
+
+        return response.status(200).json({
+            count: books.length,
+            data: books,
+        });
+    } catch (error) {
+        console.log(error);
+        response.status(500).send({ message: error.message });
+    }
+});
+
+// Route to get book by ID from the database
+app.get('/books/:id', async (request, response) => {
+    try {
+        
+        const { id } = request.params;
+
+        const book = await Book.findById(id);
+        
+        return response.status(200).json(book);
+    } catch (error) {
+        console.log(error);
+        response.status(500).send({ message: error.message });
+    }
+});
+
 // app.listen(PORT, () => {
 //   console.log(`Server listening on port ${PORT}`);
 // });
