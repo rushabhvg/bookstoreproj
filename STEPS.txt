@@ -38,3 +38,7 @@
 14. Create models in backend
 
 15. Create bookModel.js in backend\models\bookModel.js
+
+16. Write code for CRUD
+
+17. Refactor using ExpressRouter
