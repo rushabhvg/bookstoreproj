@@ -28,3 +28,9 @@
     },
 
 10. Create index.js, config.js in backend
+
+11. Add port and listen request.
+
+12. Add get request and response.
+
+13. Connect MongoDB
