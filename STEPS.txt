@@ -34,3 +34,7 @@
 12. Add get request and response.
 
 13. Connect MongoDB
+
+14. Create models in backend
+
+15. Create bookModel.js in backend\models\bookModel.js
